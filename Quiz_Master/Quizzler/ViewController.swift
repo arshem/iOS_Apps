@@ -69,11 +69,12 @@ class ViewController: UIViewController {
         if answer == correctAnswer {
             // Correct!
             updateUI(correct : true)
-
+            ProgressHUD.showSuccess("Correct!")
         }
         else {
             // Incorrect
             updateUI(correct : false)
+            ProgressHUD.showError("Incorrect!")
        }
         nextQuestion()
 
@@ -83,6 +84,7 @@ class ViewController: UIViewController {
     func startOver() {
         questionNum = 0
         score = 0
+        nextQuestion()
         updateUI(correct: false)
     }
     
